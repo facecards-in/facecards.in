@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+  <title>Facecards</title>
+</head>
+<body>
+  
+
+ <!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 bg-white shadow-md">
+  <!-- Logo -->
+  <a class="flex title-font font-medium items-center text-gray-900 ml-5" href="index.html">
+    <img src="Facecards-logo.jpg" alt="Logo" class="w-15 h-12 object-contain" />
+  </a>
+
+  <!-- Desktop Menu -->
+  <div class="hidden md:flex md:ml-auto items-center text-base justify-center">
+    <a class="mr-5 hover:text-gray-900" href="index.html">Home</a>
+    <a class="mr-5 hover:text-gray-900" href="#">Become a Model</a>
+    <a class="mr-5 hover:text-gray-900" href="aboutus.html">About Us</a>
+    <a class="mr-5 hover:text-gray-900" href="contact.html">Contact Us</a>
+  </div>
+
+  <!-- Mobile Hamburger -->
+  <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</nav>
+
+<!-- Sidebar Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+<!-- Sidebar (Mobile) -->
+<div id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 md:hidden z-50">
+  <!-- Sidebar Header -->
+  <div class="p-4 flex justify-between items-center border-b">
+    <h2 class="text-lg font-semibold">Menu</h2>
+    <button id="close-btn" class="text-gray-600 focus:outline-none">
+      <!-- Cross Icon -->
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Sidebar Links -->
+  <nav class="flex flex-col p-4 space-y-4 text-base">
+    <a class="hover:text-gray-900" href="index.html">Home</a>
+    <a class="hover:text-gray-900" href="#">Become a Model</a>
+    <a class="hover:text-gray-900" href="aboutus.html">About Us</a>
+    <a class="hover:text-gray-900" href="contact.html">Contact Us</a>
+  </nav>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const closeBtn = document.getElementById('close-btn');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+
+  // Open sidebar
+  menuBtn.addEventListener('click', () => {
+    sidebar.classList.remove('-translate-x-full');
+    overlay.classList.remove('hidden');
+  });
+
+  // Close sidebar with cross
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.add('-translate-x-full');
+    overlay.classList.add('hidden');
+  });
+
+  // Close sidebar when overlay is clicked
+  overlay.addEventListener('click', () => {
+    sidebar.classList.add('-translate-x-full');
+    overlay.classList.add('hidden');
+  });
+</script>
+
+<!-- Add padding so content doesn't go under navbar -->
+<div class="pt-20"></div>
+
+
+
+
+
+<section class="text-gray-600 body-font relative"> 
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-12">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">For any questions or model hirings,please contact us :-</p>
+    </div>
+    <div class="lg:w-1/2 md:w-2/3 mx-auto">
+      <form id="contactForm" onsubmit="sendEmail(event)">
+        <div class="flex flex-wrap -m-2">
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+              <input type="text" id="name" name="name" required 
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 
+                focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 
+                text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors 
+                duration-200 ease-in-out">
+            </div>
+          </div>
+          <div class="p-2 w-1/2">
+            <div class="relative">
+              <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+              <input type="email" id="email" name="email" required
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 
+                focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 
+                text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors 
+                duration-200 ease-in-out">
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+              <textarea id="message" name="message" required
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 
+                focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 
+                h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 
+                transition-colors duration-200 ease-in-out"></textarea>
+            </div>
+          </div>
+          <div class="p-2 w-full">
+           <button type="submit"
+  class="flex mx-auto text-white bg-black border-0 py-2 px-8 
+  focus:outline-none hover:bg-gray-800 rounded text-lg">
+  Submit
+</button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+function sendEmail(event) {
+  event.preventDefault(); // Prevent actual form submit
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  let subject = "New Contact Form Submission";
+  let body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
+
+  // Gmail compose link
+  let mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=facecards0508@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`;
+
+  window.open(mailtoLink, "_blank"); // Open Gmail in new tab
+}
+</script>
+
+
+
+</body>
+</html>
