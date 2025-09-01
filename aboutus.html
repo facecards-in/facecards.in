@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
-  <title>Facecards</title>
+    <title>Facecards</title>
 </head>
 <body>
-  
+    
 
  <!-- Navbar -->
 <nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 bg-white shadow-md">
@@ -90,76 +90,42 @@
 
 
 
-<section class="text-gray-600 body-font relative"> 
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col text-center w-full mb-12">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">For any questions or model hirings,please contact us :-</p>
-    </div>
-    <div class="lg:w-1/2 md:w-2/3 mx-auto">
-      <form id="contactForm" onsubmit="sendEmail(event)">
-        <div class="flex flex-wrap -m-2">
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-              <input type="text" id="name" name="name" required 
-                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 
-                focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 
-                text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors 
-                duration-200 ease-in-out">
-            </div>
-          </div>
-          <div class="p-2 w-1/2">
-            <div class="relative">
-              <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-              <input type="email" id="email" name="email" required
-                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 
-                focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 
-                text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors 
-                duration-200 ease-in-out">
-            </div>
-          </div>
-          <div class="p-2 w-full">
-            <div class="relative">
-              <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-              <textarea id="message" name="message" required
-                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 
-                focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 
-                h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 
-                transition-colors duration-200 ease-in-out"></textarea>
-            </div>
-          </div>
-          <div class="p-2 w-full">
-           <button type="submit"
-  class="flex mx-auto text-white bg-black border-0 py-2 px-8 
-  focus:outline-none hover:bg-gray-800 rounded text-lg">
-  Submit
-</button>
 
-          </div>
-        </div>
-      </form>
+<section class="text-gray-600 body-font -mt-6">
+  <div class="container mx-auto flex px-5 py-12 items-center justify-center flex-col">
+    <img class="lg:w-1/4 md:w-2/6 w-4/6 mb-10 object-cover object-center rounded" 
+         alt="hero" src="IMG-20250830-WA0005.jpg">
+    <div class="text-center lg:w-2/3 w-full">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+        Founder & CEO ~ Shikhar Sinha
+      </h1>
+      <p class="mb-8 leading-relaxed text-black">
+        Hello, I’m Shikhar, Founder and CEO of Facecards.
+I have been fortunate to achieve remarkable milestones in my journey. With over 10 medals and 6 trophies to my name, I have proudly earned the title of Mr. Prayagraj. Alongside my achievements, I also had the honor of hosting FNM Facecards New Models, a prestigious modeling show that celebrates emerging talent.
+      </p>
+      <div class="flex justify-center"></div>
     </div>
   </div>
 </section>
 
-<script>
-function sendEmail(event) {
-  event.preventDefault(); // Prevent actual form submit
+<section class="text-gray-600 body-font -mt-6">
+  <div class="container mx-auto flex px-5 py-12 items-center justify-center flex-col">
+    <img class="lg:w-1/4 md:w-2/6 w-4/6 mb-10 object-cover object-center rounded" 
+         alt="hero" src="F9EECD5D-67B1-45F0-839B-232477B397B5.JPG">
+    <div class="text-center lg:w-2/3 w-full">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+        CMO(Chief Marketing Officer) ~ Arkesht Gupta
+      </h1>
+      <p class="mb-8 leading-relaxed text-black">
+        Hi, I’m Arkesht, CMO of Facecards.
+With experience in founding and running two businesses, I’ve built a strong understanding of marketing, trends, and communication. At Facecards, I focus on guiding our growth and strategy, working to keep the brand relevant and moving forward.
+      </p>
+      <div class="flex justify-center"></div>
+    </div>
+  </div>
+</section>
 
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let message = document.getElementById("message").value;
 
-  let subject = "New Contact Form Submission";
-  let body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
-
-  // Gmail compose link
-  let mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=facecards0508@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`;
-
-  window.open(mailtoLink, "_blank"); // Open Gmail in new tab
-}
-</script>
 
 <footer class="text-gray-600 body-font">
   <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
@@ -186,6 +152,8 @@ function sendEmail(event) {
     </span>
   </div>
 </footer>
+
+
 
 
 </body>
